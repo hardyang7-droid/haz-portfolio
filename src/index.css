@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── 72 Font (Latin) ─────────────────────────────────────────────────────── */
+@font-face { font-family: '72'; src: url('/fonts/72/72-Thin.woff2') format('woff2'); font-weight: 100; font-display: swap; }
+@font-face { font-family: '72'; src: url('/fonts/72/72-Book.woff2') format('woff2'); font-weight: 350; font-display: swap; }
+@font-face { font-family: '72'; src: url('/fonts/72/72-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: '72'; src: url('/fonts/72/72-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: '72'; src: url('/fonts/72/72-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: '72'; src: url('/fonts/72/72-Black.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: '72', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:root {
+  --bg: #0C0C0C;
+  --surface: #141414;
+  --surface-2: #1A1A1A;
+  --text: #D7E2EA;
+  --text-muted: rgba(215, 226, 234, 0.45);
+  --border: rgba(215, 226, 234, 0.12);
+  --border-bright: rgba(215, 226, 234, 0.5);
+  --copper: #C09060;
+  --copper-dim: rgba(192, 144, 96, 0.15);
+}
+
+html { scroll-behavior: smooth; }
+
+body, html, #root {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Gradient heading ────────────────────────────────────────────────────── */
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Image protection ────────────────────────────────────────────────────── */
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Re-enable pointer events for interactive images (project thumbnails) */
+img.interactive {
+  pointer-events: auto;
+}
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}

@@ -1,0 +1,7 @@
+node_modules
+dist
+dist-verify
+dist-verify-old
+.edgeone
+.env
+.env.local
